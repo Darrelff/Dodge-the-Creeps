@@ -23,6 +23,7 @@ window/stretch/aspect="keep"
 [global]
 
 ventana=false
+sprite=false
 
 [gui]
 
