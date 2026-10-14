@@ -4,6 +4,8 @@ var score
 
 func _ready():
 	randomize()
+	new_game()
+
 	
 func game_over():
 	$ScoreTimer.stop()
@@ -46,3 +48,6 @@ func _on_MobTimer_timeout():
 
 	# Va fer que la multitud s'afegís a l'escena principal.
 	add_child(mob)
+	
+	
+
