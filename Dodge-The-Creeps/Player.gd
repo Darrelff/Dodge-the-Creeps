@@ -36,7 +36,7 @@ func _process(delta):
 	$AnimatedSprite.flip_v = velocity.y > 0
 
 
-func _on_Player_body_entered(body):
+func _on_Player_body_entered(_body):
 	hide() # El jugador desapareix després de ser impactat.
 	emit_signal("hit")
 # S'ha d'ajornar, ja que no podem canviar les propietats físiques en una crida de retorn de física.
@@ -45,13 +45,10 @@ func _on_Player_body_entered(body):
 func start(pos):
 	position = pos
 	show()
-	$CollisionShape2D.disabled = false
-
+	#$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false)
 
 
 func _on_Player_hit():
 	pass # Replace with function body.
 
-
-func game_over():
-	pass # Replace with function body.
